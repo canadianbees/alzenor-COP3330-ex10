@@ -1,3 +1,7 @@
+/*
+ *  UCF COP3330 Fall 2021 Store Class file 
+ *  Copyright 2021 Celina Alzenor
+ */
 package org.example;
 import java.util.Scanner;
 
@@ -5,6 +9,7 @@ public class Store
 {
     private double sum;
 
+    //asks user how many items they are purchasing, the price, and the quantity of each item
     public Store()
     {
         this.sum = 0.00;
@@ -22,18 +27,19 @@ public class Store
             System.out.print("Enter the quantity of item "+i+": ");
             int quantity = scan.nextInt();
 
-            sum += price * quantity;
+            this.sum += price * quantity;
 
         }
     }
 
+    //apply tax and prints the result
     public void Checkout()
     {
         float tax = (float) ((sum*.055));
-        System.out.println("Subtotal: $"+sum);
+        System.out.println("Subtotal: $"+this.sum);
         System.out.println("Tax: $"+tax);
 
-        float total = (float) (tax + sum);
+        float total = (float) (tax + this.sum);
 
         System.out.println("Total: $"+total);
 
